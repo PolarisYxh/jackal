@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="vlp16">
+
+  <xacro:macro name="vlp16" params="package parent *origin">
+    <xacro:property name="prefix" value="vlp16"/>
+
+    <link name="${prefix}_link">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://${package}/urdf/mesh/VLP16.stl"/>
+        </geometry>
+        <material name="">
+          <color rgba="1.0 1.0 0.9 1"/>
+        </material>
+      </visual>
+    </link>
+    <joint name="${prefix}_link_joint" type="fixed">
+      <xacro:insert_block name="origin"/>
+      <parent link="${parent}"/>
+      <child link="${prefix}_link"/>
+    </joint>
+
+    <link name="velodyne"/>
+    <joint name="velodyne_link_joint" type="fixed">
+      <origin xyz="0 0 0.040" rpy="0 0 0" />
+      <parent link="${prefix}_link"/>
+      <child link="velodyne"/>
+    </joint>
+
+  </xacro:macro>
+
+</robot>

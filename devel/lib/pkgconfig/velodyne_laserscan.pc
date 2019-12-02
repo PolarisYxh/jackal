@@ -1,0 +1,8 @@
+prefix=/home/iqr/catkin_ws/devel
+
+Name: velodyne_laserscan
+Description: Description of velodyne_laserscan
+Version: 1.5.2
+Cflags: -I/home/iqr/catkin_ws/devel/include
+Libs: -L/home/iqr/catkin_ws/devel/lib 
+Requires: sensor_msgs

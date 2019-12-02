@@ -1,0 +1,8 @@
+prefix=/home/iqr/catkin_ws/devel
+
+Name: iqr_4b_description
+Description: Description of iqr_4b_description
+Version: 0.3.0
+Cflags: 
+Libs: -L/home/iqr/catkin_ws/devel/lib 
+Requires: 

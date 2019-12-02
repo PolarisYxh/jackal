@@ -1,0 +1,80 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/iqr/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_36093/fast"
+/usr/bin/make -f CMakeFiles/cmTC_36093.dir/build.make CMakeFiles/cmTC_36093.dir/build
+make[1]: Entering directory '/home/iqr/catkin_ws/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_36093.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_36093.dir/CheckSymbolExists.c.o   -c /home/iqr/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_36093
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_36093.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_36093.dir/CheckSymbolExists.c.o  -o cmTC_36093 -rdynamic 
+CMakeFiles/cmTC_36093.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_36093.dir/build.make:97: recipe for target 'cmTC_36093' failed
+make[1]: *** [cmTC_36093] Error 1
+make[1]: Leaving directory '/home/iqr/catkin_ws/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_36093/fast' failed
+make: *** [cmTC_36093/fast] Error 2
+
+File /home/iqr/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/iqr/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_872bb/fast"
+/usr/bin/make -f CMakeFiles/cmTC_872bb.dir/build.make CMakeFiles/cmTC_872bb.dir/build
+make[1]: Entering directory '/home/iqr/catkin_ws/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_872bb.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_872bb.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_872bb
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_872bb.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_872bb.dir/CheckFunctionExists.c.o  -o cmTC_872bb -rdynamic -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_872bb.dir/build.make:97: recipe for target 'cmTC_872bb' failed
+make[1]: *** [cmTC_872bb] Error 1
+make[1]: Leaving directory '/home/iqr/catkin_ws/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_872bb/fast' failed
+make: *** [cmTC_872bb/fast] Error 2
+
+
+Performing C++ SOURCE FILE Test OpenCL_CXX_WORKS failed with the following output:
+Change Dir: /home/iqr/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_626df/fast"
+/usr/bin/make -f CMakeFiles/cmTC_626df.dir/build.make CMakeFiles/cmTC_626df.dir/build
+make[1]: Entering directory '/home/iqr/catkin_ws/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_626df.dir/src.cxx.o
+/usr/bin/c++    -I/include/internal  -DBT_USE_DOUBLE_PRECISION -Wall -Wuninitialized -Winit-self -Wunused-function -Wunused-label -Wunused-variable -Wunused-but-set-variable -Wunused-but-set-parameter -Warray-bounds -Wtype-limits -Wreturn-type -Wsequence-point -Wparentheses -Wmissing-braces -Wchar-subscripts -Wswitch -Wwrite-strings -Wenum-compare -Wempty-body -std=c++11 -fopenmp -DOpenCL_CXX_WORKS   -o CMakeFiles/cmTC_626df.dir/src.cxx.o -c /home/iqr/catkin_ws/build/CMakeFiles/CMakeTmp/src.cxx
+/home/iqr/catkin_ws/build/CMakeFiles/CMakeTmp/src.cxx:2:21: fatal error: CL/cl.hpp: No such file or directory
+compilation terminated.
+CMakeFiles/cmTC_626df.dir/build.make:65: recipe for target 'CMakeFiles/cmTC_626df.dir/src.cxx.o' failed
+make[1]: *** [CMakeFiles/cmTC_626df.dir/src.cxx.o] Error 1
+make[1]: Leaving directory '/home/iqr/catkin_ws/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_626df/fast' failed
+make: *** [cmTC_626df/fast] Error 2
+
+Source file was:
+
+#include <CL/cl.hpp>
+int main() {
+  cl::Context context;
+  cl::Platform platform;
+  cl::Device device;
+  return 0;
+}

@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="iqr_4b_robot">
+
+  <xacro:property name="package_name" value="iqr_4b_description"/>
+
+  <!-- Include Jackal -->
+  <include filename="$(find jackal_description)/urdf/jackal.urdf.xacro"/>
+
+  <!-- Include accessories -->
+  <xacro:include filename="$(find ${package_name})/urdf/zed.xacro"/>
+  <xacro:include filename="$(find ${package_name})/urdf/vlp16.xacro"/>
+  <xacro:include filename="$(find ${package_name})/urdf/kinect_v2.xacro"/>
+  <xacro:include filename="$(find kinova_description)/urdf/j2n6s300.xacro"/>
+  <xacro:include filename="$(find ${package_name})/urdf/jackal_support.xacro"/>
+  <xacro:include filename="$(find pan_tilt_description)/urdf/pan_tilt.urdf.xacro" />
+
+  <!-- IQR jackal support -->
+  <xacro:jackal_support package="${package_name}" parent="mid_mount">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </xacro:jackal_support>
+
+  <!-- VLP-16 lidar -->
+  <xacro:vlp16 package="${package_name}" parent="jackal_support_link">
+    <origin xyz="-0.005 0 0.528" rpy="0 0 0" />
+  </xacro:vlp16>
+
+  <!-- ZED Camera -->
+  <xacro:zed package="${package_name}" parent="jackal_support_link">
+    <origin xyz="0.27193 0 -0.06943" rpy="0 0 0" />
+  </xacro:zed>
+
+  <!-- IQR pan-tilt -->
+  <xacro:pan_tilt parent="jackal_support_link">
+    <origin xyz="-0.0801 0 0.628" rpy="0 0 0" />
+  </xacro:pan_tilt>
+
+  <!-- Kinect v2 -->
+  <xacro:kinect_v2 package="${package_name}" parent="pan_tilt_kinect_surface" >
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </xacro:kinect_v2>
+
+  <!-- Kinova jaco j2n6s300 -->
+  <xacro:j2n6s300  base_parent="arm_mount_link"/>
+
+</robot>

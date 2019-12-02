@@ -1,0 +1,8 @@
+prefix=/home/iqr/catkin_ws/devel
+
+Name: kinova_bringup
+Description: Description of kinova_bringup
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/iqr/catkin_ws/devel/lib 
+Requires: 

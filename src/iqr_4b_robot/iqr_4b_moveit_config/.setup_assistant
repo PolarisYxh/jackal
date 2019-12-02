@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: iqr_4b_description
+    relative_path: urdf/iqr_4b_robot.urdf.xacro
+    xacro_args: "--inorder "
+  SRDF:
+    relative_path: config/iqr_4b_robot.srdf
+  CONFIG:
+    author_name: QuartzYan
+    author_email: yanlei@iquotient-robot.com
+    generated_timestamp: 1572253338

@@ -1,0 +1,8 @@
+prefix=/home/iqr/catkin_ws/install
+
+Name: kinova_msgs
+Description: Description of kinova_msgs
+Version: 0.0.1
+Cflags: -I/home/iqr/catkin_ws/install/include
+Libs: -L/home/iqr/catkin_ws/install/lib 
+Requires: actionlib_msgs geometry_msgs message_runtime

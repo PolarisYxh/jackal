@@ -1,0 +1,15 @@
+<launch>
+
+  <!-- Run the map server -->
+ <arg name="map_file" default="$(find iqr_4b_navigation)/maps/map.yaml"/>
+ <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
+
+  <!--- Run AMCL -->
+ <include file="$(find jackal_navigation)/launch/include/amcl.launch" >
+  <arg name="scan_topic" default="/scan" />
+ </include>
+
+  <!--- Run Move Base -->
+ <include file="$(find jackal_navigation)/launch/include/move_base.launch" />
+
+</launch>

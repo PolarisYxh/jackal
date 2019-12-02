@@ -1,0 +1,8 @@
+prefix=/home/iqr/catkin_ws/install
+
+Name: pan_tilt_driver
+Description: Description of pan_tilt_driver
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/iqr/catkin_ws/install/lib 
+Requires: 

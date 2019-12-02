@@ -1,0 +1,8 @@
+prefix=/home/iqr/catkin_ws/install
+
+Name: velodyne_msgs
+Description: Description of velodyne_msgs
+Version: 1.5.2
+Cflags: -I/home/iqr/catkin_ws/install/include
+Libs: -L/home/iqr/catkin_ws/install/lib 
+Requires: message_runtime std_msgs
